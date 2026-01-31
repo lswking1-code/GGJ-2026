@@ -59,5 +59,8 @@ TagManager:
   - name: Sad
     uniqueID: 3299364609
     locked: 0
+  - name: Wall
+    uniqueID: 2525618237
+    locked: 0
   m_RenderingLayers:
   - Default
