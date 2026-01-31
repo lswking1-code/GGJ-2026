@@ -44,10 +44,13 @@ TagManager:
   - name: Ground
     uniqueID: 367824055
     locked: 0
+  - name: Item
+    uniqueID: 789450337
+    locked: 0
   - name: Player
     uniqueID: 1001803889
     locked: 0
-  - name: Happy
+  - name: Mask
     uniqueID: 4097236407
     locked: 0
   - name: Angry

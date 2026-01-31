@@ -3,10 +3,18 @@ using UnityEngine.InputSystem;
 
 // Simple 2D top-down controller using Rigidbody2D.
 [RequireComponent(typeof(Rigidbody2D))]
-public class TopDownPlayerController : MonoBehaviour
+public class TopDownPlayerController1 : MonoBehaviour
 {
     private enum EmotionState
     {
+        Angry,
+        Happy,
+        Sad
+    }
+
+    public enum MaskType
+    {
+        None,
         Angry,
         Happy,
         Sad
@@ -21,10 +29,8 @@ public class TopDownPlayerController : MonoBehaviour
     public bool Happy = true;
     public bool Sad = false;
 
-    [Header("White Mask")]
-    [SerializeField] private int whiteMask = 0;
-    [SerializeField] private int whiteMaskMax = 2;
-    [SerializeField] private int switchCost = 1;
+    [Header("Mask")]
+    [SerializeField] private MaskType heldMask = MaskType.None;
 
     
 
@@ -70,11 +76,7 @@ public class TopDownPlayerController : MonoBehaviour
 
         if (playerActions.SwitchR.WasPressedThisFrame())
         {
-            SwitchNextState();
-        }
-        else if (playerActions.SwitchL.WasPressedThisFrame())
-        {
-            SwitchPreviousState();
+            TrySwitchToHeldMask();
         }
     }
 
@@ -89,41 +91,33 @@ public class TopDownPlayerController : MonoBehaviour
         }
     }
 
-    private void SwitchNextState()
+    private void TrySwitchToHeldMask()
     {
-        if (!TryConsumeWhiteMask())
+        if (heldMask == MaskType.None)
         {
             return;
         }
 
-        if (currentState == EmotionState.Sad)
+        EmotionState targetState = currentState;
+        if (heldMask == MaskType.Angry)
         {
-            currentState = EmotionState.Angry;
+            targetState = EmotionState.Angry;
         }
-        else
+        else if (heldMask == MaskType.Happy)
         {
-            currentState = (EmotionState)((int)currentState + 1);
+            targetState = EmotionState.Happy;
+        }
+        else if (heldMask == MaskType.Sad)
+        {
+            targetState = EmotionState.Sad;
         }
 
-        ApplyState(currentState);
-    }
-
-    private void SwitchPreviousState()
-    {
-        if (!TryConsumeWhiteMask())
+        if (targetState == currentState)
         {
             return;
         }
 
-        if (currentState == EmotionState.Angry)
-        {
-            currentState = EmotionState.Sad;
-        }
-        else
-        {
-            currentState = (EmotionState)((int)currentState - 1);
-        }
-
+        currentState = targetState;
         ApplyState(currentState);
     }
 
@@ -152,31 +146,15 @@ public class TopDownPlayerController : MonoBehaviour
         }
     }
 
-    public int WhiteMaskValue => whiteMask;
+    public MaskType HeldMask => heldMask;
 
-    public void AddWhiteMask(int amount)
+    public void AcquireMask(MaskType mask)
     {
-        if (amount <= 0)
+        if (mask == MaskType.None)
         {
             return;
         }
 
-        whiteMask = Mathf.Min(whiteMask + amount, whiteMaskMax);
-    }
-
-    private bool TryConsumeWhiteMask()
-    {
-        if (switchCost <= 0)
-        {
-            return true;
-        }
-
-        if (whiteMask < switchCost)
-        {
-            return false;
-        }
-
-        whiteMask -= switchCost;
-        return true;
+        heldMask = mask;
     }
 }
