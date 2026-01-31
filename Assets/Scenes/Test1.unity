@@ -26867,6 +26867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maskPrefab: {fileID: 6196450183240434905, guid: 44689a3045f102c4aa16a43ae50e1a74, type: 3}
+  respawnDelay: 15
 --- !u!4 &1670454626
 Transform:
   m_ObjectHideFlags: 0
@@ -27656,6 +27657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maskPrefab: {fileID: 6196450183240434905, guid: 44689a3045f102c4aa16a43ae50e1a74, type: 3}
+  respawnDelay: 15
 --- !u!1001 &7686005784598362667
 PrefabInstance:
   m_ObjectHideFlags: 0
