@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     private float targetLostDistanceSqr;
     private bool isReturningToNav;
     private int returnNavIndex = -1;
+    private bool hasPendingMoveSpeed;
+    private float pendingMoveSpeed;
 
     [Header("Sprite")]
     public Sprite AngrySprite;
@@ -86,6 +88,7 @@ public class Enemy : MonoBehaviour
             }
 
             isReturningToNav = false;
+            ApplyPendingMoveSpeed();
         }
 
         if (playerInRange)
@@ -189,6 +192,46 @@ public class Enemy : MonoBehaviour
         return true;
     }
 
+    private int GetClosestNavIndex()
+    {
+        if (NavPoints == null || NavPoints.Length == 0)
+        {
+            return -1;
+        }
+
+        int closestIndex = -1;
+        float closestNavDistanceSqr = float.MaxValue;
+        Vector2 position = rb.position;
+        for (int i = 0; i < NavPoints.Length; i++)
+        {
+            GameObject nav = NavPoints[i];
+            if (nav == null)
+            {
+                continue;
+            }
+
+            float distanceSqr = ((Vector2)nav.transform.position - position).sqrMagnitude;
+            if (distanceSqr < closestNavDistanceSqr)
+            {
+                closestNavDistanceSqr = distanceSqr;
+                closestIndex = i;
+            }
+        }
+
+        return closestIndex;
+    }
+
+    private void ApplyPendingMoveSpeed()
+    {
+        if (!hasPendingMoveSpeed)
+        {
+            return;
+        }
+
+        moveSpeed = pendingMoveSpeed;
+        hasPendingMoveSpeed = false;
+    }
+
     private bool TryGetPlayerInRange(out Vector2 playerPos)
     {
         playerPos = default;
@@ -243,15 +286,26 @@ public class Enemy : MonoBehaviour
                 spriteRenderer.sprite = AngrySprite;
                 if (attack != null)
                 {
-                    attack.enabled = true;
+                    attack.damage = 1;
                 }
                 break;
             case 2:
-                moveSpeed = HappyMoveSpeed;
                 spriteRenderer.sprite = HappySprite;
                 if (attack != null)
                 {
-                    attack.enabled = false;
+                    attack.damage = 0;
+                }
+                int closestNavIndex = GetClosestNavIndex();
+                if (closestNavIndex >= 0)
+                {
+                    returnNavIndex = closestNavIndex;
+                    isReturningToNav = true;
+                    hasPendingMoveSpeed = true;
+                    pendingMoveSpeed = HappyMoveSpeed;
+                }
+                else
+                {
+                    moveSpeed = HappyMoveSpeed;
                 }
                 break;
             case 3:
@@ -259,7 +313,7 @@ public class Enemy : MonoBehaviour
                 spriteRenderer.sprite = SadSprite;
                 if (attack != null)
                 {
-                    attack.enabled = true;
+                    attack.damage = 1;
                 }
                 break;
         }
