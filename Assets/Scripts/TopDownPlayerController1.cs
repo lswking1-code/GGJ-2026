@@ -32,6 +32,9 @@ public class TopDownPlayerController1 : MonoBehaviour
     [Header("Mask")]
     [SerializeField] private MaskType heldMask = MaskType.None;
 
+    [Header("EventRaised")]
+    public MaskChangeEventSO maskChangeEventSO;
+
     
 
     public Sprite AngrySprite;
@@ -102,14 +105,17 @@ public class TopDownPlayerController1 : MonoBehaviour
         if (heldMask == MaskType.Angry)
         {
             targetState = EmotionState.Angry;
+            maskChangeEventSO.RaiseEvent(1);
         }
         else if (heldMask == MaskType.Happy)
         {
             targetState = EmotionState.Happy;
+            maskChangeEventSO.RaiseEvent(2);
         }
         else if (heldMask == MaskType.Sad)
         {
             targetState = EmotionState.Sad;
+            maskChangeEventSO.RaiseEvent(3);
         }
 
         if (targetState == currentState)

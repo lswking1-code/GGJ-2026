@@ -5,8 +5,8 @@ public class MapSwitch1 : MonoBehaviour
    public GameObject MapA;
    public GameObject MapB;
    public GameObject MapC;
-
-   [SerializeField] private TopDownPlayerController1 player;
+   [Header("EventListener")]
+   public MaskChangeEventSO maskChangeEventSO;
 
    private enum MapState
    {
@@ -17,36 +17,29 @@ public class MapSwitch1 : MonoBehaviour
    }
 
    private MapState currentState = MapState.None;
-
-   private void Awake()
+   private void OnEnable()
    {
-      ApplyFromPlayer();
+      maskChangeEventSO.OnEventRaised += OnMaskChange;
+   }
+   private void OnDisable()
+   {
+      maskChangeEventSO.OnEventRaised -= OnMaskChange;
    }
 
-   private void Update()
+   private void OnMaskChange(int value)
    {
-      ApplyFromPlayer();
-   }
-
-   private void ApplyFromPlayer()
-   {
-      if (player == null)
-      {
-         return;
-      }
-
       MapState targetState = MapState.None;
-      if (player.Angry)
+      switch (value)
       {
-         targetState = MapState.Angry;
-      }
-      else if (player.Happy)
-      {
-         targetState = MapState.Happy;
-      }
-      else if (player.Sad)
-      {
-         targetState = MapState.Sad;
+         case 1:
+            targetState = MapState.Angry;
+            break;
+         case 2:
+            targetState = MapState.Happy;
+            break;
+         case 3:
+            targetState = MapState.Sad;
+            break;
       }
 
       if (targetState == currentState)

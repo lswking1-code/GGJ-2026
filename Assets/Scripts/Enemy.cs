@@ -4,6 +4,9 @@ public class Enemy : MonoBehaviour
 {
     public GameObject[] NavPoints;
     public float moveSpeed = 5f;
+    public float AngryMoveSpeed = 5f;
+    public float HappyMoveSpeed = 0f;
+    public float SadMoveSpeed = 2.5f;
     public float arriveDistance = 0.1f;
     public float attackDistance = 10f;
     public float targetLostDistance = 15f;
@@ -18,6 +21,19 @@ public class Enemy : MonoBehaviour
     private float targetLostDistanceSqr;
     private bool isReturningToNav;
     private int returnNavIndex = -1;
+
+    [Header("EventListener")]
+    public MaskChangeEventSO maskChangeEventSO;
+
+    private void OnEnable()
+    {
+        maskChangeEventSO.OnEventRaised += OnMaskChange;
+    }
+    private void OnDisable()
+    {
+        maskChangeEventSO.OnEventRaised -= OnMaskChange;
+    }
+
 
     private void Awake()
     {
@@ -207,5 +223,20 @@ public class Enemy : MonoBehaviour
     {
         Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
+    }
+    private void OnMaskChange(int value)
+    {
+        switch (value)
+        {
+            case 1:
+                moveSpeed = AngryMoveSpeed;
+                break;
+            case 2:
+                moveSpeed = HappyMoveSpeed;
+                break;
+            case 3:
+                moveSpeed = SadMoveSpeed;
+                break;
+        }
     }
 }
