@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     public Sprite SadSprite;
     private SpriteRenderer spriteRenderer;
 
+    private Attack attack;
+
     [Header("EventListener")]
     public MaskChangeEventSO maskChangeEventSO;
 
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         CacheDistances();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        attack = GetComponent<Attack>();
     }
 
     private void CacheDistances()
@@ -238,14 +241,26 @@ public class Enemy : MonoBehaviour
             case 1:
                 moveSpeed = AngryMoveSpeed;
                 spriteRenderer.sprite = AngrySprite;
+                if (attack != null)
+                {
+                    attack.enabled = true;
+                }
                 break;
             case 2:
                 moveSpeed = HappyMoveSpeed;
                 spriteRenderer.sprite = HappySprite;
+                if (attack != null)
+                {
+                    attack.enabled = false;
+                }
                 break;
             case 3:
                 moveSpeed = SadMoveSpeed;
                 spriteRenderer.sprite = SadSprite;
+                if (attack != null)
+                {
+                    attack.enabled = true;
+                }
                 break;
         }
     }
