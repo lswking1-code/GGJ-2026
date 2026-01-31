@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,6 +36,10 @@ public class TopDownPlayerController1 : MonoBehaviour
     [Header("EventRaised")]
     public MaskChangeEventSO maskChangeEventSO;
 
+    [Header("Camera Confiner")]
+    [SerializeField] private CinemachineConfiner2D confiner2D;
+    [SerializeField] private string cameraEdgeTag = "CameraEdge";
+
     
 
     public Sprite AngrySprite;
@@ -55,6 +60,11 @@ public class TopDownPlayerController1 : MonoBehaviour
         inputActions = new InputSystem_Actions();
         playerActions = inputActions.Player;
         ApplyState(currentState);
+    }
+
+    private void Start()
+    {
+        maskChangeEventSO.RaiseEvent(2);
     }
 
     private void OnEnable()
@@ -92,6 +102,32 @@ public class TopDownPlayerController1 : MonoBehaviour
             float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
             rb2d.rotation = angle;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        UpdateConfinerFromCollider(collision.collider);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        UpdateConfinerFromCollider(other);
+    }
+
+    private void UpdateConfinerFromCollider(Collider2D other)
+    {
+        if (confiner2D == null || other == null)
+        {
+            return;
+        }
+
+        if (!other.CompareTag(cameraEdgeTag))
+        {
+            return;
+        }
+
+        confiner2D.BoundingShape2D = other;
+        confiner2D.InvalidateBoundingShapeCache();
     }
 
     private void TrySwitchToHeldMask()

@@ -496,6 +496,37 @@ MonoBehaviour:
   MapB: {fileID: 1379511587}
   MapC: {fileID: 172169248}
   maskChangeEventSO: {fileID: 11400000, guid: 4447329d166fa354f87ecd578fba58ff, type: 2}
+--- !u!1 &255600518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255600519}
+  m_Layer: 0
+  m_Name: SaveLoadManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &255600519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255600518}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.4257035, y: -1.9919372, z: -0.017549552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -26296,7 +26327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfceaf20fa69e2846880c4bb92261dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maskPrefab: {fileID: 6196450183240434905, guid: 44689a3045f102c4aa16a43ae50e1a74, type: 3}
+  maskPrefab: {fileID: 8836468810769968202, guid: db7f728f1ba8c474c990ca158bc3b709, type: 3}
   respawnDelay: 15
 --- !u!4 &1670454626
 Transform:
@@ -26404,6 +26435,7 @@ GameObject:
   - component: {fileID: 1866362194}
   - component: {fileID: 1866362193}
   - component: {fileID: 1866362192}
+  - component: {fileID: 1866362198}
   - component: {fileID: 1866362197}
   m_Layer: 0
   m_Name: Player
@@ -26592,6 +26624,50 @@ MonoBehaviour:
   AngrySprite: {fileID: 6007627129536956325, guid: af0c099890f3a5e45b8371e6ae2d756f, type: 3}
   HappySprite: {fileID: 5663061954668274717, guid: af0c099890f3a5e45b8371e6ae2d756f, type: 3}
   SadSprite: {fileID: -7486092956772349302, guid: af0c099890f3a5e45b8371e6ae2d756f, type: 3}
+--- !u!114 &1866362198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866362191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76edc8c7cfbeef64c8c3d63194b97fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  invulnerableDuration: 3
+  invulnerable: 0
+  damage: 0
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &1911310599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5789173180416004140, guid: f006e5141401cf3409358e455bb42102, type: 3}
+  m_PrefabInstance: {fileID: 4663072855456876602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911310607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911310599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e942e0c58091916458165cb398cfb843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &2085952584
 GameObject:
   m_ObjectHideFlags: 0
@@ -26825,6 +26901,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4752626910594621784, guid: f006e5141401cf3409358e455bb42102, type: 3}
+      propertyPath: SadMoveSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752626910594621784, guid: f006e5141401cf3409358e455bb42102, type: 3}
       propertyPath: 'NavPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1093381679}
@@ -26843,7 +26923,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5789173180416004140, guid: f006e5141401cf3409358e455bb42102, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1911310607}
   m_SourcePrefab: {fileID: 100100000, guid: f006e5141401cf3409358e455bb42102, type: 3}
 --- !u!1001 &5693815673464270496
 PrefabInstance:
@@ -26853,6 +26936,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2613348192610740355, guid: 6697b1f0e6442374094c048ce1eb4bfe, type: 3}
+      propertyPath: maskPrefab
+      value: 
+      objectReference: {fileID: 7632947682545825879, guid: ca0b8d03c952e1542a15ff7d5e6bd5de, type: 3}
     - target: {fileID: 6895106264257161222, guid: 6697b1f0e6442374094c048ce1eb4bfe, type: 3}
       propertyPath: m_Name
       value: MaskGeneratePoint
@@ -27103,3 +27190,4 @@ SceneRoots:
   - {fileID: 1670454626}
   - {fileID: 4663072855456876602}
   - {fileID: 891722175}
+  - {fileID: 255600519}
