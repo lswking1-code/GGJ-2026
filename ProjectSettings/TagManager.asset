@@ -44,23 +44,17 @@ TagManager:
   - name: Ground
     uniqueID: 367824055
     locked: 0
+  - name: Wall
+    uniqueID: 2525618237
+    locked: 0
   - name: Item
     uniqueID: 789450337
     locked: 0
-  - name: Player
-    uniqueID: 1001803889
-    locked: 0
-  - name: Mask
+  - name: Enemy
     uniqueID: 4097236407
     locked: 0
-  - name: Angry
-    uniqueID: 3797965979
-    locked: 0
-  - name: Sad
-    uniqueID: 3299364609
-    locked: 0
-  - name: Wall
-    uniqueID: 2525618237
+  - name: Player
+    uniqueID: 1001803889
     locked: 0
   m_RenderingLayers:
   - Default
