@@ -1,40 +1,43 @@
 fileFormatVersion: 2
-guid: ae96d5f51d9f6439f900a5a91e67120b
+guid: 1af9221bf58de459bb68832fdfaa22a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1493209057794620696
-    second: tileset 2_0
+      213: 7518570908689321726
+    second: tileset 4_0
   - first:
-      213: 2931100916303686755
-    second: tileset 2_1
+      213: 3391215917203570126
+    second: tileset 4_1
   - first:
-      213: 3069866725406670578
-    second: tileset 2_2
+      213: -5778950604413145303
+    second: tileset 4_2
   - first:
-      213: -1890716252487570454
-    second: tileset 2_3
+      213: 7083958803752107
+    second: tileset 4_3
   - first:
-      213: 5422276586216989438
-    second: tileset 2_4
+      213: 8948356268417229797
+    second: tileset 4_4
   - first:
-      213: -3871212660782209712
-    second: tileset 2_5
+      213: 3315168895777105080
+    second: tileset 4_5
   - first:
-      213: -7565629359869166949
-    second: tileset 2_6
+      213: 2354427082985977850
+    second: tileset 4_6
   - first:
-      213: -6343882194804710588
-    second: tileset 2_7
+      213: -3939971040308797184
+    second: tileset 4_7
   - first:
-      213: 2730555733683190446
-    second: tileset 2_8
+      213: 7902543261206183762
+    second: tileset 4_8
   - first:
-      213: 1159567023190184270
-    second: tileset 2_9
+      213: -3822162949832106391
+    second: tileset 4_9
   - first:
-      213: 4192279827676264144
-    second: tileset 2_10
+      213: -1581089507604353814
+    second: tileset 4_10
+  - first:
+      213: -1019564459707069598
+    second: tileset 4_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -130,89 +133,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_3
+      name: bottom_25
       rect:
         serializedVersion: 2
-        x: 480
-        y: 640
-        width: 320
-        height: 320
+        x: 800
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5fc92de0c8600f4686ffdcd78000445
-      internalID: -378110545
+      spriteID: e58a74effc68cdc4a8fd0b0074b2d4bd
+      internalID: 1455594676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_13
+      name: bottom_31
       rect:
         serializedVersion: 2
-        x: 480
-        y: 320
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 939ef117e6f2c9348abca779ad5dfaa5
-      internalID: -773638367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door_23
-      rect:
-        serializedVersion: 2
-        x: 480
+        x: 800
         y: 0
         width: 160
-        height: 320
+        height: 160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32932fa8ecfae8343ad4f6d4dabf5b0b
-      internalID: -1384609933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door_24
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 160
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1b944f6b2af7724badf94f655770f2e
-      internalID: 1354413871
+      spriteID: bceefbd5b4cd2fe4993b84563b13323e
+      internalID: -1534438022
       vertices: []
       indices: 
       edges: []
@@ -221,7 +180,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3664612ded9dd5143b14de6d1d4d8095
+    spriteID: 0197c4c8fd19860448f4cb60693937ee
     internalID: 0
     vertices: []
     indices: 
@@ -231,37 +190,38 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      door_0: 133838365
-      door_1: -531542525
-      door_10: 1343082661
-      door_11: -2048015481
-      door_12: -1895533687
-      door_13: -773638367
-      door_14: -445187157
-      door_15: 1792401939
-      door_16: -1061651151
-      door_17: 1464408582
-      door_18: 1781102156
-      door_19: -431462857
-      door_2: 1356999211
-      door_20: 230185911
-      door_21: -196311015
-      door_22: -1833214116
-      door_23: -1384609933
-      door_24: 1354413871
-      door_25: 244274942
-      door_26: 1260126680
-      door_27: -488028479
-      door_28: -1705077508
-      door_29: -296137989
-      door_3: -378110545
-      door_30: -1338254374
-      door_4: 174268049
-      door_5: -73532052
-      door_6: 1532442803
-      door_7: 42713369
-      door_8: 560939790
-      door_9: -1842545565
+      bottom_0: -719257339
+      bottom_1: -2044608195
+      bottom_10: 442415250
+      bottom_11: 1916910178
+      bottom_12: 1806829631
+      bottom_13: -1803291515
+      bottom_14: -855937210
+      bottom_15: 397577667
+      bottom_16: 759964940
+      bottom_17: -1560024457
+      bottom_18: 2078640418
+      bottom_19: -1602978570
+      bottom_2: 1886751071
+      bottom_20: -1648158908
+      bottom_21: 2107099122
+      bottom_22: -662315804
+      bottom_23: 2039856814
+      bottom_24: 802927648
+      bottom_25: 1455594676
+      bottom_26: 220467551
+      bottom_27: 402561761
+      bottom_28: -461879642
+      bottom_29: -619092559
+      bottom_3: -1679015534
+      bottom_30: -718788064
+      bottom_31: -1534438022
+      bottom_4: -318204713
+      bottom_5: 1544743609
+      bottom_6: 2028993983
+      bottom_7: 586815194
+      bottom_8: -725235899
+      bottom_9: -1674940065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
