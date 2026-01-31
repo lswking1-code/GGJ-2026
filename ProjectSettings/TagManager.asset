@@ -59,5 +59,8 @@ TagManager:
   - name: Water
     uniqueID: 2695008215
     locked: 0
+  - name: Box
+    uniqueID: 3390389425
+    locked: 0
   m_RenderingLayers:
   - Default
