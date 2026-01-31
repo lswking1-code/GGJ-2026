@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9011554398708293461}
   - component: {fileID: 2613348192610740355}
+  - component: {fileID: 9184637096679060603}
   m_Layer: 0
   m_Name: MaskGeneratePoint
   m_TagString: Untagged
@@ -44,5 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfceaf20fa69e2846880c4bb92261dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maskPrefab: {fileID: 6196450183240434905, guid: 44689a3045f102c4aa16a43ae50e1a74, type: 3}
+  maskPrefab: {fileID: 8836468810769968202, guid: db7f728f1ba8c474c990ca158bc3b709, type: 3}
   respawnDelay: 15
+--- !u!114 &9184637096679060603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895106264257161222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978f2e225555d714fbec078fa5720845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.2
+  color: {r: 0.015686274, g: 0.8307732, b: 1, a: 1}
