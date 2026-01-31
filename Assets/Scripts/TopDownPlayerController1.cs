@@ -41,13 +41,18 @@ public class TopDownPlayerController1 : MonoBehaviour
     [SerializeField] private string cameraEdgeTag = "CameraEdge";
 
     
+    public GameObject MaskMini;
 
     public Sprite AngrySprite;
     public Sprite HappySprite;
     public Sprite SadSprite;
+    public Sprite AngrySpriteMini;
+    public Sprite HappySpriteMini;
+    public Sprite SadSpriteMini;
 
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer maskMiniRenderer;
     private Vector2 moveInput;
     private InputSystem_Actions inputActions;
     private InputSystem_Actions.PlayerActions playerActions;
@@ -59,7 +64,12 @@ public class TopDownPlayerController1 : MonoBehaviour
         rb2d.gravityScale = 0f;
         inputActions = new InputSystem_Actions();
         playerActions = inputActions.Player;
+        if (MaskMini != null)
+        {
+            maskMiniRenderer = MaskMini.GetComponent<SpriteRenderer>();
+        }
         ApplyState(currentState);
+        UpdateMaskMiniSprite();
     }
 
     private void Start()
@@ -161,6 +171,8 @@ public class TopDownPlayerController1 : MonoBehaviour
 
         currentState = targetState;
         ApplyState(currentState);
+        heldMask = MaskType.None;
+        UpdateMaskMiniSprite();
     }
 
     private void ApplyState(EmotionState state)
@@ -198,5 +210,31 @@ public class TopDownPlayerController1 : MonoBehaviour
         }
 
         heldMask = mask;
+        UpdateMaskMiniSprite();
+    }
+
+    private void UpdateMaskMiniSprite()
+    {
+        if (maskMiniRenderer == null)
+        {
+            return;
+        }
+
+        if (heldMask == MaskType.Angry)
+        {
+            maskMiniRenderer.sprite = AngrySpriteMini;
+        }
+        else if (heldMask == MaskType.Happy)
+        {
+            maskMiniRenderer.sprite = HappySpriteMini;
+        }
+        else if (heldMask == MaskType.Sad)
+        {
+            maskMiniRenderer.sprite = SadSpriteMini;
+        }
+        else
+        {
+            maskMiniRenderer.sprite = null;
+        }
     }
 }

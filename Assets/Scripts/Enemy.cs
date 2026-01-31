@@ -22,6 +22,12 @@ public class Enemy : MonoBehaviour
     private bool isReturningToNav;
     private int returnNavIndex = -1;
 
+    [Header("Sprite")]
+    public Sprite AngrySprite;
+    public Sprite HappySprite;
+    public Sprite SadSprite;
+    private SpriteRenderer spriteRenderer;
+
     [Header("EventListener")]
     public MaskChangeEventSO maskChangeEventSO;
 
@@ -41,6 +47,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         CacheDistances();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void CacheDistances()
@@ -230,12 +237,15 @@ public class Enemy : MonoBehaviour
         {
             case 1:
                 moveSpeed = AngryMoveSpeed;
+                spriteRenderer.sprite = AngrySprite;
                 break;
             case 2:
                 moveSpeed = HappyMoveSpeed;
+                spriteRenderer.sprite = HappySprite;
                 break;
             case 3:
                 moveSpeed = SadMoveSpeed;
+                spriteRenderer.sprite = SadSprite;
                 break;
         }
     }

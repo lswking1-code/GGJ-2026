@@ -60,4 +60,8 @@ public class Character : MonoBehaviour
             invulnerableCounter = invulnerableDuration;
         }
     }
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+    }
 }

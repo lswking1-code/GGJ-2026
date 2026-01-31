@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6631382634477874091}
   - component: {fileID: 6366025577168506619}
   - component: {fileID: 4752626910594621784}
+  - component: {fileID: 730301307148960168}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -78,10 +79,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -197730889
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9841447, g: 0.6807825, b: 0.10634128, a: 1}
+  m_Sprite: {fileID: -8859159181018444231, guid: cef06baca25980648ae8af7e964b16ee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -223,4 +224,20 @@ MonoBehaviour:
   arriveDistance: 0.1
   attackDistance: 7
   targetLostDistance: 9
+  AngrySprite: {fileID: -221047551, guid: cef06baca25980648ae8af7e964b16ee, type: 3}
+  HappySprite: {fileID: -8859159181018444231, guid: cef06baca25980648ae8af7e964b16ee, type: 3}
+  SadSprite: {fileID: -1702240543, guid: cef06baca25980648ae8af7e964b16ee, type: 3}
   maskChangeEventSO: {fileID: 11400000, guid: 4447329d166fa354f87ecd578fba58ff, type: 2}
+--- !u!114 &730301307148960168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789173180416004140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e942e0c58091916458165cb398cfb843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
