@@ -45,23 +45,23 @@ TagManager:
   - name: Ground
     uniqueID: 367824055
     locked: 0
+  - name: Box
+    uniqueID: 3390389425
+    locked: 0
   - name: Wall
     uniqueID: 2525618237
     locked: 0
   - name: Item
     uniqueID: 789450337
     locked: 0
+  - name: Water
+    uniqueID: 2695008215
+    locked: 0
   - name: Enemy
     uniqueID: 4097236407
     locked: 0
   - name: Player
     uniqueID: 1001803889
-    locked: 0
-  - name: Water
-    uniqueID: 2695008215
-    locked: 0
-  - name: Box
-    uniqueID: 3390389425
     locked: 0
   m_RenderingLayers:
   - Default
