@@ -3,7 +3,9 @@ using UnityEngine;
 public class UImanager : MonoBehaviour
 {
     public CharacterEventSO characterEventSO;
-    public HPUI hpUI;
+    public HPUI hpUI; 
+
+
     private void OnEnable()
     {
         characterEventSO.OnEventRaised += OnCharacterEventRaised;
@@ -16,4 +18,5 @@ public class UImanager : MonoBehaviour
     {
         hpUI.OnHealthChange(character.currentHealth);
     }
+
 }
