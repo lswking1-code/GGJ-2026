@@ -253,10 +253,6 @@ public class TopDownPlayerController1 : MonoBehaviour
     }
     public void GetHurt(Transform attacker) 
     {  
-        if(Happy)
-        {
-            return;
-        }
         if (attacker == null)
         {
             Debug.Log("attacker is null");
