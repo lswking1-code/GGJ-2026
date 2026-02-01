@@ -245,6 +245,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     }
     public void GetHurt(Transform attacker) 
     {
+        Debug.Log("GetHurt");   
         if (attacker == null)
         {
             return;

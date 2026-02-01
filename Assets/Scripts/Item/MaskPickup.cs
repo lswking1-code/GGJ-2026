@@ -3,7 +3,7 @@ using UnityEngine;
 public class MaskPickup : MonoBehaviour
 {
     [SerializeField] private TopDownPlayerController1.MaskType maskType = TopDownPlayerController1.MaskType.None;
-    [SerializeField] private DataSaveEventSO dataSaveEventSO;
+    //[SerializeField] private DataSaveEventSO dataSaveEventSO;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,11 +22,11 @@ public class MaskPickup : MonoBehaviour
             return;
         }
 
-        if (dataSaveEventSO != null)
+        /*if (dataSaveEventSO != null)
         {
             Vector3 playerPosition = player.transform.position;
             dataSaveEventSO.RaiseEvent(new Vector2(playerPosition.x, playerPosition.y));
-        }
+        }*/
 
         player.AcquireMask(maskType);
         Destroy(gameObject);

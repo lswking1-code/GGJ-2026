@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class MapSwitch1 : MonoBehaviour
 {
-   public GameObject MapA;
-   public GameObject MapB;
-   public GameObject MapC;
+   public GameObject[] MapA;
+   public GameObject[] MapB;
+   public GameObject[] MapC;
    [Header("EventListener")]
    public MaskChangeEventSO maskChangeEventSO;
 
@@ -49,19 +49,24 @@ public class MapSwitch1 : MonoBehaviour
 
       currentState = targetState;
 
-      if (MapA != null)
+      SetMapsActive(MapA, currentState == MapState.Angry);
+      SetMapsActive(MapB, currentState == MapState.Happy);
+      SetMapsActive(MapC, currentState == MapState.Sad);
+   }
+
+   private void SetMapsActive(GameObject[] maps, bool isActive)
+   {
+      if (maps == null)
       {
-         MapA.SetActive(currentState == MapState.Angry);
+         return;
       }
 
-      if (MapB != null)
+      foreach (GameObject map in maps)
       {
-         MapB.SetActive(currentState == MapState.Happy);
-      }
-
-      if (MapC != null)
-      {
-         MapC.SetActive(currentState == MapState.Sad);
+         if (map != null)
+         {
+            map.SetActive(isActive);
+         }
       }
    }
 }
