@@ -25,6 +25,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private bool rotateTowardsMovement = true;
     public float hurtForce = 10f;
+    [SerializeField] private float hurtDuration = 0.15f;
     [Header("Emotion State")]
     [SerializeField] private EmotionState currentState = EmotionState.Happy;
     public bool Angry = false;
@@ -60,6 +61,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     private Vector2 moveInput;
     private InputSystem_Actions inputActions;
     private InputSystem_Actions.PlayerActions playerActions;
+    private float hurtTimer;
 
     private void Awake()
     {
@@ -110,6 +112,12 @@ public class TopDownPlayerController1 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (hurtTimer > 0f)
+        {
+            hurtTimer -= Time.fixedDeltaTime;
+            return;
+        }
+
         rb2d.linearVelocity = moveInput * moveSpeed;
         animator.SetFloat("Speed", rb2d.linearVelocity.magnitude);
 
@@ -244,20 +252,23 @@ public class TopDownPlayerController1 : MonoBehaviour
         }
     }
     public void GetHurt(Transform attacker) 
-    {
-        Debug.Log("GetHurt");   
+    {  
         if (attacker == null)
         {
+            Debug.Log("attacker is null");
             return;
         }
-
+        
         rb2d.linearVelocity = Vector2.zero;
         Vector2 dir = ((Vector2)transform.position - (Vector2)attacker.position).normalized;
         if (dir.sqrMagnitude < 0.0001f)
         {
+            Debug.Log("dir is zero");
             return;
         }
-
+        Debug.Log("GetHurt");
+        animator.SetTrigger("Hurt");
+        hurtTimer = hurtDuration;
         rb2d.AddForce(dir * hurtForce, ForceMode2D.Impulse);
     }
 }

@@ -8,6 +8,7 @@ public class Trigger : MonoBehaviour
     private SpriteRenderer SpriteRenderer;
     public Sprite EnterSprite;
     public Sprite ExitSprite;
+    private int insideCount;
 
     private void Start()
     {
@@ -16,13 +17,18 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        insideCount++;
         TriggerEnterEvent?.Invoke();
         SpriteRenderer.sprite = EnterSprite;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        TriggerExitEvent?.Invoke();
-        SpriteRenderer.sprite = ExitSprite;
+        insideCount = Mathf.Max(0, insideCount - 1);
+        if (insideCount == 0)
+        {
+            TriggerExitEvent?.Invoke();
+            SpriteRenderer.sprite = ExitSprite;
+        }
     }
 }
