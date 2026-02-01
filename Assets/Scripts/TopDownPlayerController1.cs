@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 // Simple 2D top-down controller using Rigidbody2D.
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(AudioSource))]
 public class TopDownPlayerController1 : MonoBehaviour
 {
     private enum EmotionState
@@ -26,6 +27,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     [SerializeField] private bool rotateTowardsMovement = true;
     public float hurtForce = 10f;
     [SerializeField] private float hurtDuration = 0.15f;
+
     [Header("Emotion State")]
     [SerializeField] private EmotionState currentState = EmotionState.Happy;
     public bool Angry = false;
@@ -45,15 +47,31 @@ public class TopDownPlayerController1 : MonoBehaviour
     [Header("Animator")]
     private Animator animator;
 
-    
+    [Header("Sprites")]
     public GameObject MaskMini;
-
     public Sprite AngrySprite;
     public Sprite HappySprite;
     public Sprite SadSprite;
     public Sprite AngrySpriteMini;
     public Sprite HappySpriteMini;
     public Sprite SadSpriteMini;
+
+    // ??????????????????????????????????????????
+    // Sound Effects
+    // ??????????????????????????????????????????
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip walkSFX;
+    [SerializeField] private AudioClip hurtSFX;
+    [SerializeField] private AudioClip deathSFX;
+    [SerializeField] private AudioClip acquireMaskSFX;
+    [SerializeField] private AudioClip useMaskSFX;
+
+    [SerializeField] private float walkSFXInterval = 0.3f;  // ?????????
+
+    private AudioSource audioSource;
+    private float walkSFXTimer = 0f;
+    private bool isWalkingSFXActive = false;
+    // ??????????????????????????????????????????
 
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
@@ -67,6 +85,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         rb2d.gravityScale = 0f;
         inputActions = new InputSystem_Actions();
         playerActions = inputActions.Player;
@@ -108,6 +127,8 @@ public class TopDownPlayerController1 : MonoBehaviour
         {
             TrySwitchToHeldMask();
         }
+
+        HandleWalkSFX();
     }
 
     private void FixedUpdate()
@@ -127,6 +148,30 @@ public class TopDownPlayerController1 : MonoBehaviour
             rb2d.rotation = angle;
         }
     }
+
+    // ??????????????????????????????????????????
+    // Walk SFX Logic
+    // ??????????????????????????????????????????
+    private void HandleWalkSFX()
+    {
+        bool isMoving = moveInput.sqrMagnitude > 0.001f;
+
+        if (isMoving)
+        {
+            walkSFXTimer += Time.deltaTime;
+            if (walkSFXTimer >= walkSFXInterval)
+            {
+                PlaySFX(walkSFX);
+                walkSFXTimer = 0f;
+            }
+        }
+        else
+        {
+            // ??????????????????????
+            walkSFXTimer = 0f;
+        }
+    }
+    // ??????????????????????????????????????????
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -187,6 +232,9 @@ public class TopDownPlayerController1 : MonoBehaviour
         ApplyState(currentState);
         heldMask = MaskType.None;
         UpdateMaskMiniSprite();
+
+        // ??????
+        PlaySFX(useMaskSFX);
     }
 
     private void ApplyState(EmotionState state)
@@ -225,6 +273,9 @@ public class TopDownPlayerController1 : MonoBehaviour
 
         heldMask = mask;
         UpdateMaskMiniSprite();
+
+        // ??????
+        PlaySFX(acquireMaskSFX);
     }
 
     private void UpdateMaskMiniSprite()
@@ -251,14 +302,15 @@ public class TopDownPlayerController1 : MonoBehaviour
             maskMiniRenderer.sprite = null;
         }
     }
-    public void GetHurt(Transform attacker) 
-    {  
+
+    public void GetHurt(Transform attacker)
+    {
         if (attacker == null)
         {
             Debug.Log("attacker is null");
             return;
         }
-        
+
         rb2d.linearVelocity = Vector2.zero;
         Vector2 dir = ((Vector2)transform.position - (Vector2)attacker.position).normalized;
         if (dir.sqrMagnitude < 0.0001f)
@@ -266,9 +318,39 @@ public class TopDownPlayerController1 : MonoBehaviour
             Debug.Log("dir is zero");
             return;
         }
+
         Debug.Log("GetHurt");
         animator.SetTrigger("Hurt");
         hurtTimer = hurtDuration;
         rb2d.AddForce(dir * hurtForce, ForceMode2D.Impulse);
+
+        // ????
+        PlaySFX(hurtSFX);
+    }
+
+    /// <summary>
+    /// ??????????? HealthSystem????
+    /// ????????????????????????
+    /// </summary>
+    public void Die()
+    {
+        // ????
+        PlaySFX(deathSFX);
+
+        // TODO: ????????????????????????
+        Debug.Log("Player has died.");
+    }
+
+    // ??????????????????????????????????????????
+    // ????
+    // ??????????????????????????????????????????
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip == null || audioSource == null)
+        {
+            return;
+        }
+
+        audioSource.PlayOneShot(clip);
     }
 }
