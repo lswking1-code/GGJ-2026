@@ -24,6 +24,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private bool rotateTowardsMovement = true;
+    public float hurtForce = 10f;
     [Header("Emotion State")]
     [SerializeField] private EmotionState currentState = EmotionState.Happy;
     public bool Angry = false;
@@ -241,5 +242,21 @@ public class TopDownPlayerController1 : MonoBehaviour
         {
             maskMiniRenderer.sprite = null;
         }
+    }
+    public void GetHurt(Transform attacker) 
+    {
+        if (attacker == null)
+        {
+            return;
+        }
+
+        rb2d.linearVelocity = Vector2.zero;
+        Vector2 dir = ((Vector2)transform.position - (Vector2)attacker.position).normalized;
+        if (dir.sqrMagnitude < 0.0001f)
+        {
+            return;
+        }
+
+        rb2d.AddForce(dir * hurtForce, ForceMode2D.Impulse);
     }
 }

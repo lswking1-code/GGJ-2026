@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Attack attack;
+    private Animator animator;
 
     [Header("EventListener")]
     public MaskChangeEventSO maskChangeEventSO;
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour
         CacheDistances();
         spriteRenderer = GetComponent<SpriteRenderer>();
         attack = GetComponent<Attack>();
+        animator = GetComponent<Animator>();
     }
 
     private void CacheDistances()
@@ -274,7 +276,13 @@ public class Enemy : MonoBehaviour
 
     private void MoveTowards(Vector2 targetPos)
     {
-        Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed * Time.fixedDeltaTime);
+        Vector2 currentPos = rb.position;
+        Vector2 newPos = Vector2.MoveTowards(currentPos, targetPos, moveSpeed * Time.fixedDeltaTime);
+        float currentSpeed = (newPos - currentPos).magnitude / Time.fixedDeltaTime;
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", currentSpeed);
+        }
         rb.MovePosition(newPos);
     }
     private void OnMaskChange(int value)
@@ -290,22 +298,11 @@ public class Enemy : MonoBehaviour
                 }
                 break;
             case 2:
+                moveSpeed = HappyMoveSpeed;
                 spriteRenderer.sprite = HappySprite;
                 if (attack != null)
                 {
                     attack.damage = 0;
-                }
-                int closestNavIndex = GetClosestNavIndex();
-                if (closestNavIndex >= 0)
-                {
-                    returnNavIndex = closestNavIndex;
-                    isReturningToNav = true;
-                    hasPendingMoveSpeed = true;
-                    pendingMoveSpeed = HappyMoveSpeed;
-                }
-                else
-                {
-                    moveSpeed = HappyMoveSpeed;
                 }
                 break;
             case 3:
