@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea5b7f5b05c0640c7b73cb35c5a6cbe6
+guid: 4927cebe897f4334e939675bea2963c9
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -124,10 +124,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileset 4_0
+      name: flag_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 480
         y: 0
         width: 160
         height: 160
@@ -137,19 +137,19 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: efe43070864575860800000000000000
-      internalID: 7518570908689321726
+      spriteID: 805133617b54e5e42ad551da2ecc3f93
+      internalID: -512718881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset 4_1
+      name: flag_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 640
         y: 0
         width: 160
         height: 160
@@ -159,32 +159,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ecdb195c8e4001f20800000000000000
-      internalID: 3391215917203570126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileset 4_2
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 92fec612b0b0dcfa0800000000000000
-      internalID: -5778950604413145303
+      spriteID: d7fce3bf10d06c64b9afc341e1de1e85
+      internalID: -2022354023
       vertices: []
       indices: 
       edges: []
@@ -203,11 +181,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tileset 4_0: 7518570908689321726
-      tileset 4_1: 3391215917203570126
-      tileset 4_2: -5778950604413145303
-      tileset 4_3: 7083958803752107
-      tileset 4_4: 8948356268417229797
+      flag_0: -1785939649
+      flag_1: 450120989
+      flag_2: -1531657173
+      flag_3: -512718881
+      flag_4: -2022354023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
