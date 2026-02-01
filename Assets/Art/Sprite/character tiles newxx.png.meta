@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 90c823738d66547c5a434c4a6a9a9dc7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5850121421828849396
+    second: character tiles newxx_0
+  - first:
+      213: 4072631805396941792
+    second: character tiles newxx_1
+  - first:
+      213: 7106885460607753829
+    second: character tiles newxx_2
+  - first:
+      213: 8613685806097207234
+    second: character tiles newxx_3
+  - first:
+      213: 1240287527468987295
+    second: character tiles newxx_4
+  - first:
+      213: 7666092549581995811
+    second: character tiles newxx_5
+  - first:
+      213: 4130667331461264220
+    second: character tiles newxx_6
+  - first:
+      213: -7733313382590938998
+    second: character tiles newxx_7
+  - first:
+      213: 4235775164787135252
+    second: character tiles newxx_8
+  - first:
+      213: 3345819583654494003
+    second: character tiles newxx_9
+  - first:
+      213: 2743675040067549291
+    second: character tiles newxx_10
+  - first:
+      213: 170041366218989982
+    second: character tiles newxx_11
+  - first:
+      213: 8470500900770852819
+    second: character tiles newxx_12
+  - first:
+      213: 2078852646154185170
+    second: character tiles newxx_13
+  - first:
+      213: -7463913239836145737
+    second: character tiles newxx_14
+  - first:
+      213: 7598238288802053455
+    second: character tiles newxx_15
+  - first:
+      213: -1720705816488885749
+    second: character tiles newxx_16
+  - first:
+      213: -684476818196901513
+    second: character tiles newxx_17
+  - first:
+      213: -5686928725755003181
+    second: character tiles newxx_18
+  - first:
+      213: -249146611188686112
+    second: character tiles newxx_19
+  - first:
+      213: -310633969737840151
+    second: character tiles newxx_20
+  - first:
+      213: 8031795069060666091
+    second: character tiles newxx_21
+  - first:
+      213: 8650233612860833827
+    second: character tiles newxx_22
+  - first:
+      213: 7724633309388090758
+    second: character tiles newxx_23
+  - first:
+      213: 4058712244298709481
+    second: character tiles newxx_24
+  - first:
+      213: -551464983764977877
+    second: character tiles newxx_25
+  - first:
+      213: -9154744895366865387
+    second: character tiles newxx_26
+  - first:
+      213: 4694978907183623800
+    second: character tiles newxx_27
+  - first:
+      213: -1049388143412626225
+    second: character tiles newxx_28
+  - first:
+      213: 2912425380381259488
+    second: character tiles newxx_29
+  - first:
+      213: 994498351334016535
+    second: character tiles newxx_30
+  - first:
+      213: -4888168849042271290
+    second: character tiles newxx_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: character tiles newxx_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 481
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fef209107ecf2150800000000000000
+      internalID: 5850121421828849396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 309
+        width: 142
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb74ad9c05e48830800000000000000
+      internalID: 4072631805396941792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_2
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 309
+        width: 142
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ed9ea2caab0a260800000000000000
+      internalID: 7106885460607753829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_3
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 309
+        width: 142
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf8f377a95f98770800000000000000
+      internalID: 8613685806097207234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_4
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93f2265fe2663110800000000000000
+      internalID: 1240287527468987295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_5
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f7a11ae8e636a60800000000000000
+      internalID: 7666092549581995811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_6
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c533f018d04135930800000000000000
+      internalID: 4130667331461264220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_7
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8084ed8370cda490800000000000000
+      internalID: -7733313382590938998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_8
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4131f8df11f78ca30800000000000000
+      internalID: 4235775164787135252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_9
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f75463f2dbe6e20800000000000000
+      internalID: 3345819583654494003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_10
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68f45e89ed731620800000000000000
+      internalID: 2743675040067549291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_11
+      rect:
+        serializedVersion: 2
+        x: 2089
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91ea9eb8bb1c5200800000000000000
+      internalID: 170041366218989982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_12
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dfa21cc0b34d8570800000000000000
+      internalID: 8470500900770852819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_13
+      rect:
+        serializedVersion: 2
+        x: 2409
+        y: 159
+        width: 142
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9a66aa77199dc10800000000000000
+      internalID: 2078852646154185170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_14
+      rect:
+        serializedVersion: 2
+        x: 2569
+        y: 159
+        width: 142
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b74b31347ada6890800000000000000
+      internalID: -7463913239836145737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_15
+      rect:
+        serializedVersion: 2
+        x: 2729
+        y: 169
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d71da677d527960800000000000000
+      internalID: 7598238288802053455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_16
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 169
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b024b353d23de18e0800000000000000
+      internalID: -1720705816488885749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_17
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 169
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771526ad5ff3086f0800000000000000
+      internalID: -684476818196901513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_18
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 169
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de786e5478f311b0800000000000000
+      internalID: -5686928725755003181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_19
+      rect:
+        serializedVersion: 2
+        x: 3369
+        y: 169
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e22b172a7ada8cf0800000000000000
+      internalID: -249146611188686112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_20
+      rect:
+        serializedVersion: 2
+        x: 3529
+        y: 169
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e94b92ec0860bbf0800000000000000
+      internalID: -310633969737840151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_21
+      rect:
+        serializedVersion: 2
+        x: 3689
+        y: 159
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be25810af0ba67f60800000000000000
+      internalID: 8031795069060666091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_22
+      rect:
+        serializedVersion: 2
+        x: 3849
+        y: 159
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320c6b6d3adcb0870800000000000000
+      internalID: 8650233612860833827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_23
+      rect:
+        serializedVersion: 2
+        x: 4009
+        y: 159
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d2a3a6119633b60800000000000000
+      internalID: 7724633309388090758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_24
+      rect:
+        serializedVersion: 2
+        x: 4169
+        y: 159
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e9f3fe3841735830800000000000000
+      internalID: 4058712244298709481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_25
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 189
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b273f90e48dc858f0800000000000000
+      internalID: -551464983764977877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_26
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 189
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51e56568500d3f080800000000000000
+      internalID: -9154744895366865387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_27
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 189
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ea1a6e07ae72140800000000000000
+      internalID: 4694978907183623800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_28
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 29
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc32602b03df61f0800000000000000
+      internalID: -1049388143412626225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_29
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 0
+        width: 122
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6f478e3730b6820800000000000000
+      internalID: 2912425380381259488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_30
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 0
+        width: 122
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 716c9f04bfa2dcd00800000000000000
+      internalID: 994498351334016535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: character tiles newxx_31
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 0
+        width: 122
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c394b6945cb92cb0800000000000000
+      internalID: -4888168849042271290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      character tiles newxx_0: 5850121421828849396
+      character tiles newxx_1: 4072631805396941792
+      character tiles newxx_10: 2743675040067549291
+      character tiles newxx_11: 170041366218989982
+      character tiles newxx_12: 8470500900770852819
+      character tiles newxx_13: 2078852646154185170
+      character tiles newxx_14: -7463913239836145737
+      character tiles newxx_15: 7598238288802053455
+      character tiles newxx_16: -1720705816488885749
+      character tiles newxx_17: -684476818196901513
+      character tiles newxx_18: -5686928725755003181
+      character tiles newxx_19: -249146611188686112
+      character tiles newxx_2: 7106885460607753829
+      character tiles newxx_20: -310633969737840151
+      character tiles newxx_21: 8031795069060666091
+      character tiles newxx_22: 8650233612860833827
+      character tiles newxx_23: 7724633309388090758
+      character tiles newxx_24: 4058712244298709481
+      character tiles newxx_25: -551464983764977877
+      character tiles newxx_26: -9154744895366865387
+      character tiles newxx_27: 4694978907183623800
+      character tiles newxx_28: -1049388143412626225
+      character tiles newxx_29: 2912425380381259488
+      character tiles newxx_3: 8613685806097207234
+      character tiles newxx_30: 994498351334016535
+      character tiles newxx_31: -4888168849042271290
+      character tiles newxx_4: 1240287527468987295
+      character tiles newxx_5: 7666092549581995811
+      character tiles newxx_6: 4130667331461264220
+      character tiles newxx_7: -7733313382590938998
+      character tiles newxx_8: 4235775164787135252
+      character tiles newxx_9: 3345819583654494003
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
