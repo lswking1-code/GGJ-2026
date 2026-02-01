@@ -226,6 +226,7 @@ MonoBehaviour:
   arriveDistance: 0.1
   attackDistance: 7
   targetLostDistance: 9
+  returnTeleportDelay: 5
   AngrySprite: {fileID: 6007627129536956325, guid: af0c099890f3a5e45b8371e6ae2d756f, type: 3}
   HappySprite: {fileID: 5663061954668274717, guid: af0c099890f3a5e45b8371e6ae2d756f, type: 3}
   SadSprite: {fileID: -7486092956772349302, guid: af0c099890f3a5e45b8371e6ae2d756f, type: 3}

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float arriveDistance = 0.1f;
     public float attackDistance = 10f;
     public float targetLostDistance = 15f;
+    public float returnTeleportDelay = 3f;
 
     private int currentIndex = 0;
     private int direction = 1;
@@ -23,6 +24,8 @@ public class Enemy : MonoBehaviour
     private int returnNavIndex = -1;
     private bool hasPendingMoveSpeed;
     private float pendingMoveSpeed;
+    private float returnTimer;
+    private int currentMask = -1;
 
     [Header("Sprite")]
     public Sprite AngrySprite;
@@ -84,12 +87,22 @@ public class Enemy : MonoBehaviour
 
         if (isReturningToNav)
         {
+            if (!IsHappy())
+            {
+                returnTimer += Time.fixedDeltaTime;
+                if (returnTeleportDelay > 0f && returnTimer >= returnTeleportDelay)
+                {
+                    TeleportToReturnNav();
+                    return;
+                }
+            }
             if (MoveBackToReturnNav())
             {
                 return;
             }
 
             isReturningToNav = false;
+            returnTimer = 0f;
             ApplyPendingMoveSpeed();
         }
 
@@ -98,6 +111,7 @@ public class Enemy : MonoBehaviour
             if (TryGetReturnNavIfNoNavInRange(out returnNavIndex))
             {
                 isReturningToNav = true;
+                returnTimer = 0f;
                 MoveBackToReturnNav();
                 return;
             }
@@ -194,6 +208,38 @@ public class Enemy : MonoBehaviour
         return true;
     }
 
+    private void TeleportToReturnNav()
+    {
+        if (returnNavIndex < 0 || returnNavIndex >= NavPoints.Length)
+        {
+            isReturningToNav = false;
+            returnTimer = 0f;
+            return;
+        }
+
+        GameObject targetNav = NavPoints[returnNavIndex];
+        if (targetNav == null)
+        {
+            isReturningToNav = false;
+            returnTimer = 0f;
+            return;
+        }
+
+        Vector2 navPos = targetNav.transform.position;
+        rb.position = navPos;
+        rb.MovePosition(navPos);
+        currentIndex = returnNavIndex;
+        AdvanceIndex();
+        isReturningToNav = false;
+        returnTimer = 0f;
+        ApplyPendingMoveSpeed();
+    }
+
+    private bool IsHappy()
+    {
+        return currentMask == 2;
+    }
+
     private int GetClosestNavIndex()
     {
         if (NavPoints == null || NavPoints.Length == 0)
@@ -287,6 +333,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnMaskChange(int value)
     {
+        currentMask = value;
         switch (value)
         {
             case 1:
