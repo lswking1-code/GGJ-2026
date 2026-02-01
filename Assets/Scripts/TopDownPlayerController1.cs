@@ -40,6 +40,9 @@ public class TopDownPlayerController1 : MonoBehaviour
     [SerializeField] private CinemachineConfiner2D confiner2D;
     [SerializeField] private string cameraEdgeTag = "CameraEdge";
 
+    [Header("Animator")]
+    private Animator animator;
+
     
     public GameObject MaskMini;
 
@@ -64,6 +67,7 @@ public class TopDownPlayerController1 : MonoBehaviour
         rb2d.gravityScale = 0f;
         inputActions = new InputSystem_Actions();
         playerActions = inputActions.Player;
+        animator = GetComponent<Animator>();
         if (MaskMini != null)
         {
             maskMiniRenderer = MaskMini.GetComponent<SpriteRenderer>();
@@ -106,6 +110,7 @@ public class TopDownPlayerController1 : MonoBehaviour
     private void FixedUpdate()
     {
         rb2d.linearVelocity = moveInput * moveSpeed;
+        animator.SetFloat("Speed", rb2d.linearVelocity.magnitude);
 
         if (rotateTowardsMovement && moveInput.sqrMagnitude > 0.001f)
         {
