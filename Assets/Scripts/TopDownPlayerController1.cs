@@ -39,7 +39,8 @@ public class TopDownPlayerController1 : MonoBehaviour
 
     [Header("EventRaised")]
     public MaskChangeEventSO maskChangeEventSO;
-
+    [Header("EventListener")]
+    public VoidEventSO gameClearEventSO;
     [Header("Camera Confiner")]
     [SerializeField] private CinemachineConfiner2D confiner2D;
     [SerializeField] private string cameraEdgeTag = "CameraEdge";
@@ -70,7 +71,6 @@ public class TopDownPlayerController1 : MonoBehaviour
 
     private AudioSource audioSource;
     private float walkSFXTimer = 0f;
-    private bool isWalkingSFXActive = false;
     // ??????????????????????????????????????????
 
     private Rigidbody2D rb2d;
@@ -106,11 +106,13 @@ public class TopDownPlayerController1 : MonoBehaviour
     private void OnEnable()
     {
         inputActions?.Enable();
+        gameClearEventSO.OnEventRaised += OnGameClearEventRaised;
     }
 
     private void OnDisable()
     {
         inputActions?.Disable();
+        gameClearEventSO.OnEventRaised -= OnGameClearEventRaised;
     }
 
     private void OnDestroy()
@@ -356,5 +358,9 @@ public class TopDownPlayerController1 : MonoBehaviour
         }
 
         audioSource.PlayOneShot(clip);
+    }
+    private void OnGameClearEventRaised()
+    {
+        inputActions?.Disable();
     }
 }
